@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		010D9CD129B6319500CD7652 /* PromoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D9CCF29B6319500CD7652 /* PromoCell.swift */; };
 		010D9CD229B6319500CD7652 /* PromoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D9CD029B6319500CD7652 /* PromoCell.xib */; };
+		010D9CD729B638C700CD7652 /* VoucherTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D9CD529B638C700CD7652 /* VoucherTableCell.swift */; };
+		010D9CD829B638C700CD7652 /* VoucherTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D9CD629B638C700CD7652 /* VoucherTableCell.xib */; };
+		010D9CDB29B6393C00CD7652 /* VoucherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D9CD929B6393C00CD7652 /* VoucherCell.swift */; };
+		010D9CDC29B6393C00CD7652 /* VoucherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D9CDA29B6393C00CD7652 /* VoucherCell.xib */; };
 		016BBC1629B5DCA400FC0B3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC1529B5DCA400FC0B3B /* AppDelegate.swift */; };
 		016BBC1829B5DCA400FC0B3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC1729B5DCA400FC0B3B /* SceneDelegate.swift */; };
 		016BBC1A29B5DCA400FC0B3B /* InternetPackagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC1929B5DCA400FC0B3B /* InternetPackagesViewController.swift */; };
@@ -27,6 +31,10 @@
 /* Begin PBXFileReference section */
 		010D9CCF29B6319500CD7652 /* PromoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCell.swift; sourceTree = "<group>"; };
 		010D9CD029B6319500CD7652 /* PromoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoCell.xib; sourceTree = "<group>"; };
+		010D9CD529B638C700CD7652 /* VoucherTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherTableCell.swift; sourceTree = "<group>"; };
+		010D9CD629B638C700CD7652 /* VoucherTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoucherTableCell.xib; sourceTree = "<group>"; };
+		010D9CD929B6393C00CD7652 /* VoucherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherCell.swift; sourceTree = "<group>"; };
+		010D9CDA29B6393C00CD7652 /* VoucherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoucherCell.xib; sourceTree = "<group>"; };
 		016BBC1229B5DCA400FC0B3B /* Week4-MyTelkomsel-xib-storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week4-MyTelkomsel-xib-storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		016BBC1529B5DCA400FC0B3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		016BBC1729B5DCA400FC0B3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010D9CD429B638A800CD7652 /* Voucher */ = {
+			isa = PBXGroup;
+			children = (
+				010D9CD529B638C700CD7652 /* VoucherTableCell.swift */,
+				010D9CD629B638C700CD7652 /* VoucherTableCell.xib */,
+				010D9CD929B6393C00CD7652 /* VoucherCell.swift */,
+				010D9CDA29B6393C00CD7652 /* VoucherCell.xib */,
+			);
+			name = Voucher;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		016BBC0929B5DCA400FC0B3B = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +111,7 @@
 		016BBC3329B5E8FB00FC0B3B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				010D9CD429B638A800CD7652 /* Voucher */,
 				01A5B78429B5EF2E000963A9 /* Promo */,
 				016BBC3429B5E91700FC0B3B /* InternetPackage */,
 			);
@@ -201,8 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				016BBC2229B5DCA600FC0B3B /* LaunchScreen.storyboard in Resources */,
+				010D9CD829B638C700CD7652 /* VoucherTableCell.xib in Resources */,
 				016BBC1F29B5DCA600FC0B3B /* Assets.xcassets in Resources */,
 				016BBC2C29B5DD7700FC0B3B /* InternetPackagesTableCell.xib in Resources */,
+				010D9CDC29B6393C00CD7652 /* VoucherCell.xib in Resources */,
 				016BBC3029B5DE7E00FC0B3B /* PackageCell.xib in Resources */,
 				01A5B78829B5EF4C000963A9 /* PromoTableCell.xib in Resources */,
 				010D9CD229B6319500CD7652 /* PromoCell.xib in Resources */,
@@ -219,8 +242,10 @@
 			files = (
 				016BBC2F29B5DE7E00FC0B3B /* PackageCell.swift in Sources */,
 				016BBC1A29B5DCA400FC0B3B /* InternetPackagesViewController.swift in Sources */,
+				010D9CDB29B6393C00CD7652 /* VoucherCell.swift in Sources */,
 				016BBC1629B5DCA400FC0B3B /* AppDelegate.swift in Sources */,
 				01A5B78729B5EF4C000963A9 /* PromoTableCell.swift in Sources */,
+				010D9CD729B638C700CD7652 /* VoucherTableCell.swift in Sources */,
 				016BBC2B29B5DD7700FC0B3B /* InternetPackagesTableCell.swift in Sources */,
 				016BBC1829B5DCA400FC0B3B /* SceneDelegate.swift in Sources */,
 				016BBC3229B5E70F00FC0B3B /* UIColorExtension.swift in Sources */,
