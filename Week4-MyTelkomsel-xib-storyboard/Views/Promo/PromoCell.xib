@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PromoCell" customModule="Week4_MyTelkomsel_xib_storyboard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="248" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="248" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOL-dI-ziv">
+                        <rect key="frame" x="0.0" y="0.0" width="248" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9rv-MC-mae">
+                                <rect key="frame" x="0.0" y="0.0" width="248" height="100"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9rv-MC-mae" firstAttribute="top" secondItem="KOL-dI-ziv" secondAttribute="top" id="Plr-ZS-k28"/>
+                            <constraint firstAttribute="height" constant="100" id="RcC-ZY-meE"/>
+                            <constraint firstAttribute="trailing" secondItem="9rv-MC-mae" secondAttribute="trailing" id="S4h-ug-Xc6"/>
+                            <constraint firstAttribute="width" constant="248" id="qB5-eJ-wBM"/>
+                            <constraint firstAttribute="bottom" secondItem="9rv-MC-mae" secondAttribute="bottom" id="rod-7G-Sj8"/>
+                            <constraint firstItem="9rv-MC-mae" firstAttribute="leading" secondItem="KOL-dI-ziv" secondAttribute="leading" id="vX9-am-8jM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="KOL-dI-ziv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gQL-0U-yCP"/>
+                <constraint firstItem="KOL-dI-ziv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ikC-np-L7Z"/>
+                <constraint firstAttribute="trailing" secondItem="KOL-dI-ziv" secondAttribute="trailing" id="kxh-Zt-5ea"/>
+                <constraint firstAttribute="bottom" secondItem="KOL-dI-ziv" secondAttribute="bottom" id="nCq-em-nIM"/>
+            </constraints>
+            <size key="customSize" width="351" height="120"/>
+            <connections>
+                <outlet property="containerView" destination="KOL-dI-ziv" id="5dS-DC-ncc"/>
+                <outlet property="promoImage" destination="9rv-MC-mae" id="r6d-1B-VP0"/>
+            </connections>
+            <point key="canvasLocation" x="112.31884057971016" y="119.19642857142857"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010D9CD129B6319500CD7652 /* PromoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D9CCF29B6319500CD7652 /* PromoCell.swift */; };
+		010D9CD229B6319500CD7652 /* PromoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D9CD029B6319500CD7652 /* PromoCell.xib */; };
 		016BBC1629B5DCA400FC0B3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC1529B5DCA400FC0B3B /* AppDelegate.swift */; };
 		016BBC1829B5DCA400FC0B3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC1729B5DCA400FC0B3B /* SceneDelegate.swift */; };
 		016BBC1A29B5DCA400FC0B3B /* InternetPackagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC1929B5DCA400FC0B3B /* InternetPackagesViewController.swift */; };
@@ -18,9 +20,13 @@
 		016BBC2F29B5DE7E00FC0B3B /* PackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC2D29B5DE7E00FC0B3B /* PackageCell.swift */; };
 		016BBC3029B5DE7E00FC0B3B /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016BBC2E29B5DE7E00FC0B3B /* PackageCell.xib */; };
 		016BBC3229B5E70F00FC0B3B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC3129B5E70F00FC0B3B /* UIColorExtension.swift */; };
+		01A5B78729B5EF4C000963A9 /* PromoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5B78529B5EF4C000963A9 /* PromoTableCell.swift */; };
+		01A5B78829B5EF4C000963A9 /* PromoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5B78629B5EF4C000963A9 /* PromoTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010D9CCF29B6319500CD7652 /* PromoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCell.swift; sourceTree = "<group>"; };
+		010D9CD029B6319500CD7652 /* PromoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoCell.xib; sourceTree = "<group>"; };
 		016BBC1229B5DCA400FC0B3B /* Week4-MyTelkomsel-xib-storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week4-MyTelkomsel-xib-storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		016BBC1529B5DCA400FC0B3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		016BBC1729B5DCA400FC0B3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +40,8 @@
 		016BBC2D29B5DE7E00FC0B3B /* PackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCell.swift; sourceTree = "<group>"; };
 		016BBC2E29B5DE7E00FC0B3B /* PackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
 		016BBC3129B5E70F00FC0B3B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		01A5B78529B5EF4C000963A9 /* PromoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoTableCell.swift; sourceTree = "<group>"; };
+		01A5B78629B5EF4C000963A9 /* PromoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 		016BBC3329B5E8FB00FC0B3B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01A5B78429B5EF2E000963A9 /* Promo */,
 				016BBC3429B5E91700FC0B3B /* InternetPackage */,
 			);
 			path = Views;
@@ -120,6 +129,17 @@
 				016BBC3129B5E70F00FC0B3B /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		01A5B78429B5EF2E000963A9 /* Promo */ = {
+			isa = PBXGroup;
+			children = (
+				01A5B78529B5EF4C000963A9 /* PromoTableCell.swift */,
+				01A5B78629B5EF4C000963A9 /* PromoTableCell.xib */,
+				010D9CCF29B6319500CD7652 /* PromoCell.swift */,
+				010D9CD029B6319500CD7652 /* PromoCell.xib */,
+			);
+			path = Promo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +204,8 @@
 				016BBC1F29B5DCA600FC0B3B /* Assets.xcassets in Resources */,
 				016BBC2C29B5DD7700FC0B3B /* InternetPackagesTableCell.xib in Resources */,
 				016BBC3029B5DE7E00FC0B3B /* PackageCell.xib in Resources */,
+				01A5B78829B5EF4C000963A9 /* PromoTableCell.xib in Resources */,
+				010D9CD229B6319500CD7652 /* PromoCell.xib in Resources */,
 				016BBC1D29B5DCA400FC0B3B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,9 +220,11 @@
 				016BBC2F29B5DE7E00FC0B3B /* PackageCell.swift in Sources */,
 				016BBC1A29B5DCA400FC0B3B /* InternetPackagesViewController.swift in Sources */,
 				016BBC1629B5DCA400FC0B3B /* AppDelegate.swift in Sources */,
+				01A5B78729B5EF4C000963A9 /* PromoTableCell.swift in Sources */,
 				016BBC2B29B5DD7700FC0B3B /* InternetPackagesTableCell.swift in Sources */,
 				016BBC1829B5DCA400FC0B3B /* SceneDelegate.swift in Sources */,
 				016BBC3229B5E70F00FC0B3B /* UIColorExtension.swift in Sources */,
+				010D9CD129B6319500CD7652 /* PromoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
