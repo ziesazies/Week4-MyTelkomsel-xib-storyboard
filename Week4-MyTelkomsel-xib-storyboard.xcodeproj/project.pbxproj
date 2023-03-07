@@ -24,8 +24,18 @@
 		016BBC2F29B5DE7E00FC0B3B /* PackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC2D29B5DE7E00FC0B3B /* PackageCell.swift */; };
 		016BBC3029B5DE7E00FC0B3B /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016BBC2E29B5DE7E00FC0B3B /* PackageCell.xib */; };
 		016BBC3229B5E70F00FC0B3B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC3129B5E70F00FC0B3B /* UIColorExtension.swift */; };
+		0183216529B77EB40066F8FC /* BuyPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183216429B77EB40066F8FC /* BuyPackageViewController.swift */; };
 		01A5B78729B5EF4C000963A9 /* PromoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5B78529B5EF4C000963A9 /* PromoTableCell.swift */; };
 		01A5B78829B5EF4C000963A9 /* PromoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5B78629B5EF4C000963A9 /* PromoTableCell.xib */; };
+		01B1CDEF29B6D64200F220E3 /* DetailPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B1CDEE29B6D64200F220E3 /* DetailPackageViewController.swift */; };
+		01B1CDF329B6D95000F220E3 /* DetailPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B1CDF129B6D95000F220E3 /* DetailPriceCell.swift */; };
+		01B1CDF429B6D95000F220E3 /* DetailPriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B1CDF229B6D95000F220E3 /* DetailPriceCell.xib */; };
+		01B1CDF929B6F87400F220E3 /* DurationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B1CDF729B6F87400F220E3 /* DurationCell.swift */; };
+		01B1CDFA29B6F87400F220E3 /* DurationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B1CDF829B6F87400F220E3 /* DurationCell.xib */; };
+		01B1CDFE29B70F1000F220E3 /* DetailPackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B1CDFC29B70F1000F220E3 /* DetailPackageCell.swift */; };
+		01B1CDFF29B70F1000F220E3 /* DetailPackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B1CDFD29B70F1000F220E3 /* DetailPackageCell.xib */; };
+		01B1CE0429B72CF900F220E3 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B1CE0229B72CF900F220E3 /* DescriptionCell.swift */; };
+		01B1CE0529B72CF900F220E3 /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B1CE0329B72CF900F220E3 /* DescriptionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +58,19 @@
 		016BBC2D29B5DE7E00FC0B3B /* PackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCell.swift; sourceTree = "<group>"; };
 		016BBC2E29B5DE7E00FC0B3B /* PackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
 		016BBC3129B5E70F00FC0B3B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		0183216429B77EB40066F8FC /* BuyPackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPackageViewController.swift; sourceTree = "<group>"; };
+		01952B4529B6C2AD00E781C3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		01A5B78529B5EF4C000963A9 /* PromoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoTableCell.swift; sourceTree = "<group>"; };
 		01A5B78629B5EF4C000963A9 /* PromoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoTableCell.xib; sourceTree = "<group>"; };
+		01B1CDEE29B6D64200F220E3 /* DetailPackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPackageViewController.swift; sourceTree = "<group>"; };
+		01B1CDF129B6D95000F220E3 /* DetailPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPriceCell.swift; sourceTree = "<group>"; };
+		01B1CDF229B6D95000F220E3 /* DetailPriceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPriceCell.xib; sourceTree = "<group>"; };
+		01B1CDF729B6F87400F220E3 /* DurationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationCell.swift; sourceTree = "<group>"; };
+		01B1CDF829B6F87400F220E3 /* DurationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DurationCell.xib; sourceTree = "<group>"; };
+		01B1CDFC29B70F1000F220E3 /* DetailPackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPackageCell.swift; sourceTree = "<group>"; };
+		01B1CDFD29B70F1000F220E3 /* DetailPackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPackageCell.xib; sourceTree = "<group>"; };
+		01B1CE0229B72CF900F220E3 /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		01B1CE0329B72CF900F220E3 /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +93,13 @@
 				010D9CDA29B6393C00CD7652 /* VoucherCell.xib */,
 			);
 			name = Voucher;
-			path = ..;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		016BBC0929B5DCA400FC0B3B = {
 			isa = PBXGroup;
 			children = (
+				01952B4529B6C2AD00E781C3 /* README.md */,
 				016BBC1429B5DCA400FC0B3B /* Week4-MyTelkomsel-xib-storyboard */,
 				016BBC1329B5DCA400FC0B3B /* Products */,
 			);
@@ -111,14 +133,13 @@
 		016BBC3329B5E8FB00FC0B3B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				010D9CD429B638A800CD7652 /* Voucher */,
-				01A5B78429B5EF2E000963A9 /* Promo */,
-				016BBC3429B5E91700FC0B3B /* InternetPackage */,
+				01B1CDF029B6D65500F220E3 /* InternetPackage */,
+				01B1CDF529B6F75500F220E3 /* Details */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		016BBC3429B5E91700FC0B3B /* InternetPackage */ = {
+		016BBC3429B5E91700FC0B3B /* Package */ = {
 			isa = PBXGroup;
 			children = (
 				016BBC2929B5DD7700FC0B3B /* InternetPackagesTableCell.swift */,
@@ -126,7 +147,7 @@
 				016BBC2D29B5DE7E00FC0B3B /* PackageCell.swift */,
 				016BBC2E29B5DE7E00FC0B3B /* PackageCell.xib */,
 			);
-			path = InternetPackage;
+			path = Package;
 			sourceTree = "<group>";
 		};
 		016BBC3529B5E94400FC0B3B /* Models */ = {
@@ -140,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				016BBC1929B5DCA400FC0B3B /* InternetPackagesViewController.swift */,
+				01B1CDEE29B6D64200F220E3 /* DetailPackageViewController.swift */,
+				0183216429B77EB40066F8FC /* BuyPackageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,6 +184,63 @@
 				010D9CD029B6319500CD7652 /* PromoCell.xib */,
 			);
 			path = Promo;
+			sourceTree = "<group>";
+		};
+		01B1CDF029B6D65500F220E3 /* InternetPackage */ = {
+			isa = PBXGroup;
+			children = (
+				010D9CD429B638A800CD7652 /* Voucher */,
+				01A5B78429B5EF2E000963A9 /* Promo */,
+				016BBC3429B5E91700FC0B3B /* Package */,
+			);
+			path = InternetPackage;
+			sourceTree = "<group>";
+		};
+		01B1CDF529B6F75500F220E3 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				01B1CDF629B6F76100F220E3 /* Price */,
+				01B1CDFB29B70EC700F220E3 /* Duration */,
+				01B1CE0029B72C2300F220E3 /* DetailPackage */,
+				01B1CE0129B72C9F00F220E3 /* Description */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		01B1CDF629B6F76100F220E3 /* Price */ = {
+			isa = PBXGroup;
+			children = (
+				01B1CDF129B6D95000F220E3 /* DetailPriceCell.swift */,
+				01B1CDF229B6D95000F220E3 /* DetailPriceCell.xib */,
+			);
+			path = Price;
+			sourceTree = "<group>";
+		};
+		01B1CDFB29B70EC700F220E3 /* Duration */ = {
+			isa = PBXGroup;
+			children = (
+				01B1CDF729B6F87400F220E3 /* DurationCell.swift */,
+				01B1CDF829B6F87400F220E3 /* DurationCell.xib */,
+			);
+			path = Duration;
+			sourceTree = "<group>";
+		};
+		01B1CE0029B72C2300F220E3 /* DetailPackage */ = {
+			isa = PBXGroup;
+			children = (
+				01B1CDFC29B70F1000F220E3 /* DetailPackageCell.swift */,
+				01B1CDFD29B70F1000F220E3 /* DetailPackageCell.xib */,
+			);
+			path = DetailPackage;
+			sourceTree = "<group>";
+		};
+		01B1CE0129B72C9F00F220E3 /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				01B1CE0229B72CF900F220E3 /* DescriptionCell.swift */,
+				01B1CE0329B72CF900F220E3 /* DescriptionCell.xib */,
+			);
+			path = Description;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,13 +301,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B1CE0529B72CF900F220E3 /* DescriptionCell.xib in Resources */,
 				016BBC2229B5DCA600FC0B3B /* LaunchScreen.storyboard in Resources */,
 				010D9CD829B638C700CD7652 /* VoucherTableCell.xib in Resources */,
 				016BBC1F29B5DCA600FC0B3B /* Assets.xcassets in Resources */,
 				016BBC2C29B5DD7700FC0B3B /* InternetPackagesTableCell.xib in Resources */,
+				01B1CDF429B6D95000F220E3 /* DetailPriceCell.xib in Resources */,
 				010D9CDC29B6393C00CD7652 /* VoucherCell.xib in Resources */,
 				016BBC3029B5DE7E00FC0B3B /* PackageCell.xib in Resources */,
+				01B1CDFA29B6F87400F220E3 /* DurationCell.xib in Resources */,
 				01A5B78829B5EF4C000963A9 /* PromoTableCell.xib in Resources */,
+				01B1CDFF29B70F1000F220E3 /* DetailPackageCell.xib in Resources */,
 				010D9CD229B6319500CD7652 /* PromoCell.xib in Resources */,
 				016BBC1D29B5DCA400FC0B3B /* Main.storyboard in Resources */,
 			);
@@ -240,16 +324,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B1CDF929B6F87400F220E3 /* DurationCell.swift in Sources */,
 				016BBC2F29B5DE7E00FC0B3B /* PackageCell.swift in Sources */,
 				016BBC1A29B5DCA400FC0B3B /* InternetPackagesViewController.swift in Sources */,
+				01B1CDF329B6D95000F220E3 /* DetailPriceCell.swift in Sources */,
+				0183216529B77EB40066F8FC /* BuyPackageViewController.swift in Sources */,
 				010D9CDB29B6393C00CD7652 /* VoucherCell.swift in Sources */,
 				016BBC1629B5DCA400FC0B3B /* AppDelegate.swift in Sources */,
 				01A5B78729B5EF4C000963A9 /* PromoTableCell.swift in Sources */,
+				01B1CDFE29B70F1000F220E3 /* DetailPackageCell.swift in Sources */,
 				010D9CD729B638C700CD7652 /* VoucherTableCell.swift in Sources */,
+				01B1CDEF29B6D64200F220E3 /* DetailPackageViewController.swift in Sources */,
 				016BBC2B29B5DD7700FC0B3B /* InternetPackagesTableCell.swift in Sources */,
 				016BBC1829B5DCA400FC0B3B /* SceneDelegate.swift in Sources */,
 				016BBC3229B5E70F00FC0B3B /* UIColorExtension.swift in Sources */,
 				010D9CD129B6319500CD7652 /* PromoCell.swift in Sources */,
+				01B1CE0429B72CF900F220E3 /* DescriptionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

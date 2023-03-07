@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tbb-uJ-w5L">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tbb-uJ-w5L">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -37,7 +37,78 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="79.6875"/>
+            <point key="canvasLocation" x="784" y="93"/>
+        </scene>
+        <!--Detail Package View Controller-->
+        <scene sceneID="973-io-Aoo">
+            <objects>
+                <viewController storyboardIdentifier="DetailPackageViewController" id="znf-SW-YDY" customClass="DetailPackageViewController" customModule="Week4_MyTelkomsel_xib_storyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2zQ-ZV-7B6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WEK-kP-dbi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQl-kq-ZIk">
+                                <rect key="frame" x="0.0" y="766" width="414" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhg-I7-zWP">
+                                        <rect key="frame" x="20" y="42" width="374" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="6SW-lg-T6Z"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bhg-I7-zWP" secondAttribute="trailing" constant="20" id="0rn-yR-2LZ"/>
+                                    <constraint firstItem="bhg-I7-zWP" firstAttribute="leading" secondItem="LQl-kq-ZIk" secondAttribute="leading" constant="20" id="NX1-7Q-mB2"/>
+                                    <constraint firstAttribute="height" constant="96" id="Vyp-WU-nuv"/>
+                                    <constraint firstAttribute="bottom" secondItem="bhg-I7-zWP" secondAttribute="bottom" constant="12" id="nKh-gD-Hy6"/>
+                                    <constraint firstItem="bhg-I7-zWP" firstAttribute="top" secondItem="LQl-kq-ZIk" secondAttribute="top" priority="250" constant="12" id="r4G-eH-Hj7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vgu-pA-qXU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WEK-kP-dbi" firstAttribute="leading" secondItem="vgu-pA-qXU" secondAttribute="leading" id="JEW-og-4Mz"/>
+                            <constraint firstItem="vgu-pA-qXU" firstAttribute="trailing" secondItem="LQl-kq-ZIk" secondAttribute="trailing" id="Shh-V6-rI3"/>
+                            <constraint firstItem="vgu-pA-qXU" firstAttribute="trailing" secondItem="WEK-kP-dbi" secondAttribute="trailing" id="Y6a-xT-PF4"/>
+                            <constraint firstItem="LQl-kq-ZIk" firstAttribute="leading" secondItem="vgu-pA-qXU" secondAttribute="leading" id="c1d-SM-3p2"/>
+                            <constraint firstItem="LQl-kq-ZIk" firstAttribute="bottom" secondItem="vgu-pA-qXU" secondAttribute="bottom" id="cG3-13-aFP"/>
+                            <constraint firstItem="WEK-kP-dbi" firstAttribute="top" secondItem="vgu-pA-qXU" secondAttribute="top" id="fkA-YQ-9j4"/>
+                            <constraint firstItem="LQl-kq-ZIk" firstAttribute="top" secondItem="WEK-kP-dbi" secondAttribute="bottom" id="sib-LG-z3Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zcX-gP-QRu"/>
+                    <connections>
+                        <outlet property="buyButton" destination="bhg-I7-zWP" id="zxB-Gh-x7M"/>
+                        <outlet property="tableView" destination="WEK-kP-dbi" id="aIo-kJ-G9u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUh-QT-kd5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682.608695652174" y="79.6875"/>
+        </scene>
+        <!--Buy Package View Controller-->
+        <scene sceneID="zKg-ik-ufu">
+            <objects>
+                <viewController storyboardIdentifier="BuyPackageViewController" id="Fc7-B3-hFl" customClass="BuyPackageViewController" customModule="Week4_MyTelkomsel_xib_storyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aBq-e6-xcf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="UOg-is-6Fk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="51f-IQ-5ai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2622" y="104"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UCB-Zm-yMj">
@@ -50,7 +121,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lkT-1u-qZr"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bAg-2m-9Uq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rDc-0v-ACl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

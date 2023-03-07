@@ -7,13 +7,27 @@
 
 import UIKit
 
-class InternetPackagesViewController: UIViewController {
+protocol InternetPackagesViewControllerDelegate {
+    func navigateToDetail()
+}
+
+class InternetPackagesViewController: UIViewController, InternetPackagesViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var delegate: InternetPackagesViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        delegate = self
         setupTable()
+    }
+    
+    func navigateToDetail() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "DetailPackageViewController") as! DetailPackageViewController
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func setupTable() {
@@ -45,9 +59,16 @@ extension InternetPackagesViewController: UITableViewDataSource {
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
             cell.setupCollection()
+            cell.delegate = self
             
             return cell
         case 2:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
+            cell.setupCollection()
+            cell.delegate = self
+            
+            return cell
+        case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: VoucherTableCell.identifier, for: indexPath) as? VoucherTableCell
             else { return UITableViewCell() }
             cell.setupCollection()
@@ -66,10 +87,12 @@ extension InternetPackagesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 120
+            return 110
         case 1:
             return 136
         case 2:
+            return 136
+        case 3:
             return 192
         default:
             return 0
@@ -78,27 +101,36 @@ extension InternetPackagesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionView = UIView()
-        let label = UILabel(frame: CGRect(x: 20, y: 0, width: tableView.bounds.width - (20*2), height: 20))
+        let label = UILabel(frame: CGRect(x: 24, y: 0, width: tableView.bounds.width - (20*2), height: 20))
         
         switch section {
+        case 0:
+            return nil
         case 1:
             label.textColor = UIColor.black
             label.text = "Langganan Kamu"
             label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         case 2:
             label.textColor = UIColor.black
+            label.text = "Popular"
+            label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        case 3:
+            label.textColor = UIColor.black
             label.text = "Cari Voucher, Yuk!"
             label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         default:
-            return label
+            return nil
         }
         sectionView.addSubview(label)
         return sectionView
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0.0001 : 20
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
     
 }

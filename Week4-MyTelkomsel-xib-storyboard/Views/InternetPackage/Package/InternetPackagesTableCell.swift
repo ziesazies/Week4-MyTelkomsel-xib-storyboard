@@ -13,6 +13,8 @@ class InternetPackagesTableCell: UITableViewCell {
     
     static let identifier = "internetPackagesTable"
     
+    var delegate: InternetPackagesViewControllerDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -46,5 +48,7 @@ extension InternetPackagesTableCell: UICollectionViewDelegateFlowLayout, UIColle
         return UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.navigateToDetail()
+    }
 }
