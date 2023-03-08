@@ -20,6 +20,15 @@ class DetailPriceCell: UITableViewCell {
         // Initialization code
     }
     
+    func setupDetailPriceData(before: String, after: String) {
+        if before.isEmpty {
+            priceBeforeLabel.text = before
+            priceAfterLabel.text = after
+            priceAfterLabel.textColor = UIColor.black
+        }
+        
+    }
+    
     func setupDetailPriceUI() {
         priceBeforeLabel.font = UIFont.systemFont(ofSize: 14)
         priceAfterLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)

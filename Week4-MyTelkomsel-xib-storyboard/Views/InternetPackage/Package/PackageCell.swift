@@ -19,10 +19,31 @@ class PackageCell: UICollectionViewCell {
     @IBOutlet weak var durationImage: UIImageView!
     
     static let identifier = "packageCell"
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setupPackageData(model: InternetPackage) {
+        
+        if model.priceBefore.isEmpty {
+            priceBeforeLabel.text = model.priceBefore
+            priceAfterLabel.textColor = UIColor.black
+            priceAfterLabel.text = model.priceAfter
+        } else {
+            let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: model.priceBefore)
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
+            priceBeforeLabel.attributedText = attributeString
+            
+        }
+//        priceAfterLabel.text = model.priceAfter
+        
+        quotaLabel.text = model.quota
+        
+        quotaNameLabel.text = model.packageName
+        
+        quotaDurationLabel.text = model.duration
     }
     
     func setupPackageUI() {
@@ -36,9 +57,6 @@ class PackageCell: UICollectionViewCell {
         quotaDurationLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         quotaNameLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         
-        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: "Rp99.000")
-            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
-        priceBeforeLabel.attributedText = attributeString
         
         durationImage.image = UIImage(named: "duration")?.withRenderingMode(.alwaysOriginal)
         bookmarkButton.image = UIImage(systemName: "bookmark.fill")?.withTintColor(UIColor(rgb: 0xCED6E0)).withRenderingMode(.alwaysOriginal)

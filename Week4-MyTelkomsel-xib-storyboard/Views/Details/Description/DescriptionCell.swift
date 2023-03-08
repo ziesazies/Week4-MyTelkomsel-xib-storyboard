@@ -16,16 +16,43 @@ class DescriptionCell: UITableViewCell {
     
     static let identifier = "descriptionCell"
     
-    var dummyDesc: [String] = ["Kuota Internet dengan akses di semua jaringan (2G/3G/4G).",
-"Kuota Nelpon ke Sesama Telkomsel","Kuota 2 GB OMG! untuk akses Youtube, Facebook, Instagram, MAXstream, Viu, iFlix, Klik Film, Bein Sport, dan Nickelodeon Play berlaku 30 hari.",
-"Termasuk berlangganan 30 hari."]
-    
-    var namaPaket = "Internet OMG!"
-    var durasiPaket = "30 Hari"
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setupDescriptionData(model: InternetPackage?) {
+        if let detail = model {
+            subTitleLabel.text = "Paket Internet \(detail.packageName) berlaku untuk \(detail.duration), dengan rincian kuota:"
+            
+            model?.packageDescription.forEach { text in
+                let stackView = UIStackView()
+                stackView.alignment = .top
+                stackView.axis = .horizontal
+                stackView.distribution = .fill
+                stackView.contentMode = .scaleAspectFill
+                stackView.spacing = 8
+                
+                let pointBullet = UILabel()
+                pointBullet.text = "\u{2022}"
+                pointBullet.textAlignment = .left
+                pointBullet.font = UIFont.systemFont(ofSize: 14, weight: .heavy)
+                
+                let label = UILabel()
+                label.numberOfLines = 0
+                label.text = text
+                label.font = UIFont.systemFont(ofSize: 14)
+                label.textAlignment = .left
+                label.textColor = UIColor(rgb: 0x1E272E)
+                
+                stackView.addArrangedSubview(pointBullet)
+                stackView.addArrangedSubview(label)
+                
+                pointBullet.widthAnchor.constraint(equalToConstant: 20).isActive = true
+                
+                self.descriptionStack.addArrangedSubview(stackView)
+            }
+        }
     }
     
     func setupDescriptionUI() {
@@ -36,36 +63,12 @@ class DescriptionCell: UITableViewCell {
         titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         titleLabel.textColor = UIColor(rgb: 0x1E272E)
         
-        subTitleLabel.text = "Paket Internet \(namaPaket) berlaku untuk \(durasiPaket), dengan rincian kuota:"
         subTitleLabel.numberOfLines = 0
         subTitleLabel.font = UIFont.systemFont(ofSize: 14)
         subTitleLabel.textColor = UIColor(rgb: 0x1E272E)
         
-        
         background.backgroundColor = UIColor(rgb: 0xF5F5F5)
         containerView.backgroundColor = UIColor.white
         
-        dummyDesc.forEach { text in
-            let stackView = UIStackView()
-            stackView.alignment = .top
-            stackView.axis = .horizontal
-            stackView.distribution = .fill
-            stackView.spacing = 8
-           
-            let pointBullet = UILabel()
-            pointBullet.text = "\u{2022}"
-            pointBullet.textAlignment = .left
-            pointBullet.font = UIFont.systemFont(ofSize: 14, weight: .heavy)
-            
-            let label = UILabel()
-            label.numberOfLines = 0
-            label.text = text
-            label.font = UIFont.systemFont(ofSize: 14)
-            label.textAlignment = .left
-            
-           stackView.addArrangedSubview(pointBullet)
-            stackView.addArrangedSubview(label)
-            self.descriptionStack.addArrangedSubview(stackView)
-        }
     }
 }

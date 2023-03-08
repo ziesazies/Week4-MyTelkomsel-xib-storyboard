@@ -15,6 +15,8 @@ class InternetPackagesTableCell: UITableViewCell {
     
     var delegate: InternetPackagesViewControllerDelegate?
     
+    var internetPackage: [InternetPackage]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,12 +34,15 @@ extension InternetPackagesTableCell: UICollectionViewDelegateFlowLayout, UIColle
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PackageCell.identifier, for: indexPath) as? PackageCell else{return UICollectionViewCell()}
         
         cell.setupPackageUI()
+        if let data = internetPackage {
+            cell.setupPackageData(model: data[indexPath.row])
+        }
         return cell
     }
     
  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return internetPackage?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -49,6 +54,8 @@ extension InternetPackagesTableCell: UICollectionViewDelegateFlowLayout, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.navigateToDetail()
+        if let model = internetPackage?[indexPath.row] {
+            delegate?.navigateToDetail(model: model)
+        }
     }
 }

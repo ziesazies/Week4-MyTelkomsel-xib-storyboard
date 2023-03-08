@@ -12,6 +12,8 @@ class DetailPackageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buyButton: UIButton!
     
+    var model: InternetPackage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,7 +44,8 @@ class DetailPackageViewController: UIViewController {
     
     @objc func buyButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "BuyPackageViewController")
+        let viewController = storyboard.instantiateViewController(withIdentifier: "BuyPackageViewController") as! BuyPackageViewController
+        viewController.model = self.model
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -62,15 +65,17 @@ extension DetailPackageViewController: UITableViewDelegate, UITableViewDataSourc
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DurationCell.identifier) as? DurationCell else { return UITableViewCell() }
             
             cell.setupDurationUI()
+            cell.durationLabel.text = model?.duration
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailPackageCell.identifier, for: indexPath) as? DetailPackageCell else { return UITableViewCell() }
             cell.setupDetailUI()
+            cell.setupDetailData(model: model)
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionCell.identifier, for: indexPath) as? DescriptionCell else { return UITableViewCell() }
-            
             cell.setupDescriptionUI()
+            cell.setupDescriptionData(model: model)
             
             return cell
         default:
@@ -89,7 +94,7 @@ extension DetailPackageViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 80
+            return UITableView.automaticDimension
         case 1:
             return UITableView.automaticDimension
         case 2:

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol InternetPackagesViewControllerDelegate {
-    func navigateToDetail()
+    func navigateToDetail(model: InternetPackage)
 }
 
 class InternetPackagesViewController: UIViewController, InternetPackagesViewControllerDelegate {
@@ -17,6 +17,8 @@ class InternetPackagesViewController: UIViewController, InternetPackagesViewCont
     
     var delegate: InternetPackagesViewControllerDelegate?
     
+    let datas = InternetPackageProvider.all()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,9 +26,10 @@ class InternetPackagesViewController: UIViewController, InternetPackagesViewCont
         setupTable()
     }
     
-    func navigateToDetail() {
+    func navigateToDetail(model: InternetPackage) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailPackageViewController") as! DetailPackageViewController
+        viewController.model = model
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -60,12 +63,14 @@ extension InternetPackagesViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
             cell.setupCollection()
             cell.delegate = self
+            cell.internetPackage = datas
             
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
             cell.setupCollection()
             cell.delegate = self
+            cell.internetPackage = datas
             
             return cell
         case 3:

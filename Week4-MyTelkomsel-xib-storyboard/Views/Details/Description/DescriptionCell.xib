@@ -35,8 +35,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0Jk-rh-MIa">
-                                        <rect key="frame" x="16" y="90" width="606" height="358"/>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0Jk-rh-MIa">
+                                        <rect key="frame" x="16" y="90" width="614" height="358"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="trailing" secondItem="0gW-9o-Bt9" secondAttribute="trailing" constant="16" id="cDI-qP-jFf"/>
                                     <constraint firstItem="0gW-9o-Bt9" firstAttribute="leading" secondItem="S4a-aG-Yfl" secondAttribute="leading" constant="16" id="lBj-zr-VQu"/>
                                     <constraint firstItem="0gW-9o-Bt9" firstAttribute="top" secondItem="rWo-zA-tSc" secondAttribute="bottom" constant="16" id="tha-0t-eWv"/>
-                                    <constraint firstAttribute="trailing" secondItem="0Jk-rh-MIa" secondAttribute="trailing" constant="16" id="x6Q-De-dgv"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Jk-rh-MIa" secondAttribute="trailing" constant="8" id="x6Q-De-dgv"/>
                                     <constraint firstAttribute="bottom" secondItem="0Jk-rh-MIa" secondAttribute="bottom" constant="16" id="zbI-ke-ZfZ"/>
                                 </constraints>
                             </view>

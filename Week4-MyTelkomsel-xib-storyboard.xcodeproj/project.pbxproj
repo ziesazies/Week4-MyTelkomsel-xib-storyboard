@@ -24,6 +24,7 @@
 		016BBC2F29B5DE7E00FC0B3B /* PackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC2D29B5DE7E00FC0B3B /* PackageCell.swift */; };
 		016BBC3029B5DE7E00FC0B3B /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016BBC2E29B5DE7E00FC0B3B /* PackageCell.xib */; };
 		016BBC3229B5E70F00FC0B3B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BBC3129B5E70F00FC0B3B /* UIColorExtension.swift */; };
+		017D9BF629B82BD700FB45DD /* InternetPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D9BF529B82BD700FB45DD /* InternetPackage.swift */; };
 		0183216529B77EB40066F8FC /* BuyPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183216429B77EB40066F8FC /* BuyPackageViewController.swift */; };
 		01A5B78729B5EF4C000963A9 /* PromoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5B78529B5EF4C000963A9 /* PromoTableCell.swift */; };
 		01A5B78829B5EF4C000963A9 /* PromoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5B78629B5EF4C000963A9 /* PromoTableCell.xib */; };
@@ -58,6 +59,7 @@
 		016BBC2D29B5DE7E00FC0B3B /* PackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCell.swift; sourceTree = "<group>"; };
 		016BBC2E29B5DE7E00FC0B3B /* PackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
 		016BBC3129B5E70F00FC0B3B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		017D9BF529B82BD700FB45DD /* InternetPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetPackage.swift; sourceTree = "<group>"; };
 		0183216429B77EB40066F8FC /* BuyPackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPackageViewController.swift; sourceTree = "<group>"; };
 		01952B4529B6C2AD00E781C3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		01A5B78529B5EF4C000963A9 /* PromoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoTableCell.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		016BBC3529B5E94400FC0B3B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				017D9BF529B82BD700FB45DD /* InternetPackage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,9 +192,9 @@
 		01B1CDF029B6D65500F220E3 /* InternetPackage */ = {
 			isa = PBXGroup;
 			children = (
-				010D9CD429B638A800CD7652 /* Voucher */,
 				01A5B78429B5EF2E000963A9 /* Promo */,
 				016BBC3429B5E91700FC0B3B /* Package */,
+				010D9CD429B638A800CD7652 /* Voucher */,
 			);
 			path = InternetPackage;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				01A5B78729B5EF4C000963A9 /* PromoTableCell.swift in Sources */,
 				01B1CDFE29B70F1000F220E3 /* DetailPackageCell.swift in Sources */,
 				010D9CD729B638C700CD7652 /* VoucherTableCell.swift in Sources */,
+				017D9BF629B82BD700FB45DD /* InternetPackage.swift in Sources */,
 				01B1CDEF29B6D64200F220E3 /* DetailPackageViewController.swift in Sources */,
 				016BBC2B29B5DD7700FC0B3B /* InternetPackagesTableCell.swift in Sources */,
 				016BBC1829B5DCA400FC0B3B /* SceneDelegate.swift in Sources */,
