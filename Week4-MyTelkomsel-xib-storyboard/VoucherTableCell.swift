@@ -13,6 +13,8 @@ class VoucherTableCell: UITableViewCell {
     
     static let identifier = "voucherTableCell"
     
+    var pictures: [Pictures]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,13 +34,19 @@ extension VoucherTableCell: UICollectionViewDelegateFlowLayout {
 extension VoucherTableCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if let model = pictures {
+            return model.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VoucherCell.identifier, for: indexPath) as? VoucherCell else { return UICollectionViewCell() }
         
         cell.setupVoucherUI()
+        if let model = pictures {
+            cell.setupVoucherData(model: model[indexPath.row])
+        }
         return cell
     }
     

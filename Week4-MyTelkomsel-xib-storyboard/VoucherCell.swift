@@ -19,12 +19,24 @@ class VoucherCell: UICollectionViewCell {
         // Initialization code
     }
     
+    func setupVoucherData(model: Pictures?) {
+        if let picture = model {
+            voucherImage.image = UIImage(named: picture.image)
+            voucherDescLabel.text = picture.label
+        }
+    }
     func setupVoucherUI() {
-        voucherImage.image = UIImage(named: "voucher1")
         voucherDescLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         voucherDescLabel.textColor = UIColor(rgb: 0x1E272E)
         voucherDescLabel.numberOfLines = 2
-        voucherDescLabel.text = "Double Benefits from DOUBLE UNTUNG"
+        self.contentView.layer.cornerRadius = 2
+        self.contentView.layer.masksToBounds = true
+        
+        layer.masksToBounds = false
+        layer.shadowOpacity = 0.3
+        layer.shadowRadius = 4
+        layer.shadowOffset = CGSize(width: 2, height: 2)
+        layer.shadowColor = UIColor.black.cgColor
     }
 
 }

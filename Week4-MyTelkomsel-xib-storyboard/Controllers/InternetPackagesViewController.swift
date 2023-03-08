@@ -18,6 +18,8 @@ class InternetPackagesViewController: UIViewController, InternetPackagesViewCont
     var delegate: InternetPackagesViewControllerDelegate?
     
     let datas = InternetPackageProvider.all()
+    let dataPromos = PicturesProvider.promos()
+    let dataVouchers = PicturesProvider.vouchers()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,18 +48,14 @@ class InternetPackagesViewController: UIViewController, InternetPackagesViewCont
 
 }
 
-extension InternetPackagesViewController: UITableViewDelegate {
-    
-}
-
-extension InternetPackagesViewController: UITableViewDataSource {
+extension InternetPackagesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PromoTableCell.identifier, for: indexPath) as? PromoTableCell else { return UITableViewCell() }
-            
             cell.setupCollection()
+            cell.pictures = dataPromos
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
@@ -77,6 +75,14 @@ extension InternetPackagesViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: VoucherTableCell.identifier, for: indexPath) as? VoucherTableCell
             else { return UITableViewCell() }
             cell.setupCollection()
+            cell.pictures = dataVouchers
+            
+            return cell
+        case 4:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
+            cell.setupCollection()
+            cell.delegate = self
+            cell.internetPackage = datas
             
             return cell
         default:
@@ -92,13 +98,15 @@ extension InternetPackagesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 110
+            return self.tableView.frame.size.height / 6
         case 1:
-            return 136
+            return self.tableView.frame.size.height / 6
         case 2:
-            return 136
+            return self.tableView.frame.size.height / 6
         case 3:
-            return 192
+            return self.tableView.frame.size.height / 4
+        case 4:
+            return self.tableView.frame.size.height / 6
         default:
             return 0
         }
@@ -123,6 +131,10 @@ extension InternetPackagesViewController: UITableViewDataSource {
             label.textColor = UIColor.black
             label.text = "Cari Voucher, Yuk!"
             label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        case 4:
+            label.textColor = UIColor.black
+            label.text = "#DirumahAja"
+            label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         default:
             return nil
         }
@@ -135,7 +147,7 @@ extension InternetPackagesViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
 }

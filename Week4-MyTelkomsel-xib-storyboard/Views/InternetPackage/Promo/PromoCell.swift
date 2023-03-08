@@ -18,8 +18,11 @@ class PromoCell: UICollectionViewCell {
         // Initialization code
     }
     
+    func setupPromoData(model: Pictures) {
+        promoImage.image = UIImage(named: model.image)
+    }
+    
     func setupPromoUI() {
-        promoImage.image = UIImage(named: "thumb1")
         containerView.layer.cornerRadius = 4
         containerView.layer.masksToBounds = true
     }

@@ -13,6 +13,8 @@ class PromoTableCell: UITableViewCell {
     
     static let identifier = "promoTable"
     
+    var pictures: [Pictures]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,13 +34,19 @@ extension PromoTableCell: UICollectionViewDelegateFlowLayout {
 
 extension PromoTableCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if let model = pictures {
+            return model.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PromoCell.identifier, for: indexPath) as? PromoCell else { return UICollectionViewCell() }
     
         cell.setupPromoUI()
+        if let model = pictures {
+            cell.setupPromoData(model: model[indexPath.row])
+        }
         return cell
     }
     
