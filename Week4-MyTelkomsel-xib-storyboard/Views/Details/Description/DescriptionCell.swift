@@ -10,7 +10,9 @@ import UIKit
 class DescriptionCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var descriptionStack: UIStackView!
+    @IBOutlet weak var background: UIView!
     
     static let identifier = "descriptionCell"
     
@@ -38,6 +40,10 @@ class DescriptionCell: UITableViewCell {
         subTitleLabel.numberOfLines = 0
         subTitleLabel.font = UIFont.systemFont(ofSize: 14)
         subTitleLabel.textColor = UIColor(rgb: 0x1E272E)
+        
+        
+        background.backgroundColor = UIColor(rgb: 0xF5F5F5)
+        containerView.backgroundColor = UIColor.white
         
         dummyDesc.forEach { text in
             let stackView = UIStackView()

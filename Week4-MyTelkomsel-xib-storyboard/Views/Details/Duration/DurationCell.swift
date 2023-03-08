@@ -9,6 +9,7 @@ import UIKit
 
 class DurationCell: UITableViewCell {
 
+    @IBOutlet weak var background: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var viewBg: UIView!
@@ -37,6 +38,8 @@ class DurationCell: UITableViewCell {
         viewBg.layer.cornerRadius = 18
         viewBg.layer.masksToBounds = true
         viewBg.backgroundColor = UIColor(rgb: 0xF1F2F6)
+        background.backgroundColor = UIColor(rgb: 0xF5F5F5)
+        containerView.backgroundColor = UIColor.white
     }
     
 }

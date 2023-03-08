@@ -27,13 +27,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EPL-te-zz1">
-                                <rect key="frame" x="20" y="58" width="335" height="299"/>
+                                <rect key="frame" x="20" y="58" width="335" height="283"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6EF-87-2m9" firstAttribute="leading" secondItem="xQm-3S-NDg" secondAttribute="leading" constant="20" id="7os-X5-grq"/>
-                            <constraint firstAttribute="bottom" secondItem="EPL-te-zz1" secondAttribute="bottom" id="8re-IP-SOE"/>
+                            <constraint firstAttribute="bottom" secondItem="EPL-te-zz1" secondAttribute="bottom" constant="16" id="8re-IP-SOE"/>
                             <constraint firstItem="EPL-te-zz1" firstAttribute="leading" secondItem="xQm-3S-NDg" secondAttribute="leading" constant="20" id="Pts-7x-e0E"/>
                             <constraint firstItem="6EF-87-2m9" firstAttribute="top" secondItem="xQm-3S-NDg" secondAttribute="top" constant="20" id="hAh-UM-K9e"/>
                             <constraint firstAttribute="trailing" secondItem="EPL-te-zz1" secondAttribute="trailing" constant="20" id="ihy-6Z-4wb"/>

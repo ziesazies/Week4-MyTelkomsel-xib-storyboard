@@ -28,7 +28,7 @@ class DetailPackageCell: UITableViewCell {
         titleLabel.text = "Rincian Paket"
         titleLabel.textColor = UIColor(rgb: 0x1E272E)
         
-        self.stackView.spacing = 4
+        self.stackView.spacing = 16
         
         for i in 0..<packageNameList.count {
             let stackView = UIStackView()

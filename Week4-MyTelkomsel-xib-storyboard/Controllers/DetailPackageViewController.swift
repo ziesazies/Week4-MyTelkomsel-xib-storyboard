@@ -91,7 +91,7 @@ extension DetailPackageViewController: UITableViewDelegate, UITableViewDataSourc
         case 0:
             return 80
         case 1:
-            return 60
+            return UITableView.automaticDimension
         case 2:
             return UITableView.automaticDimension
         case 3:
