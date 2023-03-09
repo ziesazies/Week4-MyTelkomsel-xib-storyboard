@@ -7,9 +7,10 @@
 
 import UIKit
 
-class DetailPackageViewController: UIViewController {
+class DetailPackageViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var buyButton: UIButton!
     
     var model: InternetPackage?
@@ -22,19 +23,27 @@ class DetailPackageViewController: UIViewController {
     }
     
     func setupTableDetail() {
+        title = "Detail Paket"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: UIBarButtonItem.Style.plain, target: navigationController, action: #selector(UINavigationController.popViewController(animated:)))
+        backButton.tintColor = UIColor.black
+        navigationItem.leftBarButtonItem = backButton
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        
         tableView.register(UINib(nibName: "DetailPriceCell", bundle: nil), forCellReuseIdentifier: DetailPriceCell.identifier)
         tableView.register(UINib(nibName: "DurationCell", bundle: nil), forCellReuseIdentifier: DurationCell.identifier)
         tableView.register(UINib(nibName: "DetailPackageCell", bundle: nil), forCellReuseIdentifier: DetailPackageCell.identifier)
         tableView.register(UINib(nibName: "DescriptionCell", bundle: nil), forCellReuseIdentifier: DescriptionCell.identifier)
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.separatorStyle = .none
         
         buyButton.backgroundColor = UIColor(rgb: 0xEC2028)
         buyButton.setTitle("BELI SEKARANG", for: .normal)
-        buyButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         buyButton.setTitleColor(UIColor.white, for: .normal)
+        buyButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         buyButton.addTarget(self, action: #selector(buyButtonTapped(_:)), for: .touchUpInside)
         
         buyButton.layer.cornerRadius = 4
@@ -56,14 +65,15 @@ extension DetailPackageViewController: UITableViewDelegate, UITableViewDataSourc
         switch indexPath.section {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailPriceCell.identifier) as? DetailPriceCell else { return UITableViewCell() }
-            
             cell.setupDetailPriceUI()
-            
+            if let dataPrice = model {
+                cell.setupDetailPriceData(before: dataPrice.priceBefore, after: dataPrice.priceAfter)
+                
+            }
             return cell
             
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DurationCell.identifier) as? DurationCell else { return UITableViewCell() }
-            
             cell.setupDurationUI()
             cell.durationLabel.text = model?.duration
             return cell
@@ -76,7 +86,6 @@ extension DetailPackageViewController: UITableViewDelegate, UITableViewDataSourc
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionCell.identifier, for: indexPath) as? DescriptionCell else { return UITableViewCell() }
             cell.setupDescriptionUI()
             cell.setupDescriptionData(model: model)
-            
             return cell
         default:
             return UITableViewCell()

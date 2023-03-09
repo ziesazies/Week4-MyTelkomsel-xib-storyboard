@@ -16,6 +16,7 @@ class BuyPackageViewController: UIViewController {
     @IBOutlet weak var internetPackageLabel: UILabel!
     @IBOutlet weak var packageNameLabel: UILabel!
     @IBOutlet weak var detailPackageLabel: UILabel!
+    @IBOutlet weak var backToHomeButton: UIButton!
     
     var model: InternetPackage?
     var aString: String? = ""
@@ -28,18 +29,27 @@ class BuyPackageViewController: UIViewController {
         setupSuccessData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func setupSuccessData() {
         packageNameLabel.text = model?.packageName
         if let dataDetail = model?.packageDetails {
-            for i in dataDetail {
-                if i.quantity != dataDetail.last?.quantity {
-                    self.aString?.append("\(i.quantity) \(i.type) + ")
-                } else {
-                    self.aString?.append("\(i.quantity) \(i.type)")
-                }
+            for (index, item) in dataDetail.enumerated() where index != dataDetail.count - 1 {
+                aString?.append("\(item.quantity) \(item.type) + ")
             }
+            aString?.append("\(dataDetail.last?.quantity ?? "") \(dataDetail.last?.type ?? "")")
         }
+        
         detailPackageLabel.text = aString
+        detailPackageLabel.contentMode = .scaleAspectFill
     }
         
     func setupSuccessUI() {
@@ -70,6 +80,19 @@ class BuyPackageViewController: UIViewController {
         detailPackageLabel.textColor = UIColor.lightGray
 //        detailPackageLabel.text = "4.5 GB Internet + 2 GB OMG! + 60 SMS Tsel + 100 Mins Voice Tsel"
         detailPackageLabel.numberOfLines = 0
+        
+        backToHomeButton.addTarget(self, action: #selector(backToHomeButtonTapped(_:)), for: .touchUpInside)
+        backToHomeButton.backgroundColor = UIColor(rgb: 0xEC2028)
+        backToHomeButton.setTitle("Kembali ke Home", for: .normal)
+        backToHomeButton.setTitleColor(UIColor.white, for: .normal)
+        backToHomeButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        
+        backToHomeButton.layer.cornerRadius = 4
+        backToHomeButton.layer.masksToBounds = true
+        
+        }
+        @objc func backToHomeButtonTapped(_ sender: Any) {
+            self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

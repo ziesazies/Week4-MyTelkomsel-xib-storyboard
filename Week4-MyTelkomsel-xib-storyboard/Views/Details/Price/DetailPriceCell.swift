@@ -23,8 +23,14 @@ class DetailPriceCell: UITableViewCell {
     func setupDetailPriceData(before: String, after: String) {
         if before.isEmpty {
             priceBeforeLabel.text = before
+            priceBeforeLabel.isHidden = true
             priceAfterLabel.text = after
             priceAfterLabel.textColor = UIColor.black
+        } else {
+            let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: before)
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
+            priceBeforeLabel.attributedText = attributeString
+            priceAfterLabel.text = after
         }
         
     }
@@ -33,10 +39,6 @@ class DetailPriceCell: UITableViewCell {
         priceBeforeLabel.font = UIFont.systemFont(ofSize: 14)
         priceAfterLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         
-        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: "Rp99.000")
-            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
-        priceBeforeLabel.attributedText = attributeString
-        priceAfterLabel.text = "Rp16.000"
         
         priceBeforeLabel.textColor = UIColor(rgb: 0x747D8C)
         priceAfterLabel.textColor = UIColor(rgb: 0xEC2028)

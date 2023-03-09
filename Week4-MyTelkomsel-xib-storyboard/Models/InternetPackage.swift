@@ -105,4 +105,14 @@ public struct InternetPackageProvider {
                                 ])
         ]
     }
+    static func dirumahAja() -> [InternetPackage] {
+        return [
+            InternetPackage(packageName: "RuangGuru", quota: "30 GB", priceBefore: "", priceAfter: "FREE", duration: "30 HARI", packageDetails:[], packageDescription: []),
+            InternetPackage(packageName: "RuangGuru", quota: "30 GB", priceBefore: "", priceAfter: "FREE", duration: "30 HARI", packageDetails:[], packageDescription: []),
+            InternetPackage(packageName: "RuangGuru", quota: "30 GB", priceBefore: "", priceAfter: "FREE", duration: "30 HARI", packageDetails:[], packageDescription: []),
+            InternetPackage(packageName: "RuangGuru", quota: "30 GB", priceBefore: "", priceAfter: "FREE", duration: "30 HARI", packageDetails:[], packageDescription: []),
+            InternetPackage(packageName: "RuangGuru", quota: "30 GB", priceBefore: "", priceAfter: "FREE", duration: "30 HARI", packageDetails:[], packageDescription: []),
+            InternetPackage(packageName: "RuangGuru", quota: "30 GB", priceBefore: "", priceAfter: "FREE", duration: "30 HARI", packageDetails:[], packageDescription: []),
+        ]
+    }
 }

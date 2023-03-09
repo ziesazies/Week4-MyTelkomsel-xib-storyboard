@@ -17,13 +17,15 @@ class InternetPackagesViewController: UIViewController, InternetPackagesViewCont
     
     var delegate: InternetPackagesViewControllerDelegate?
     
-    let datas = InternetPackageProvider.all()
+    let dataInternetPackage = InternetPackageProvider.all()
+    let dataDirumahAja = InternetPackageProvider.dirumahAja()
     let dataPromos = PicturesProvider.promos()
     let dataVouchers = PicturesProvider.vouchers()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Paket Internet"
         delegate = self
         setupTable()
     }
@@ -31,19 +33,19 @@ class InternetPackagesViewController: UIViewController, InternetPackagesViewCont
     func navigateToDetail(model: InternetPackage) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailPackageViewController") as! DetailPackageViewController
+        
         viewController.model = model
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     func setupTable() {
-        title = "Paket Internet"
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
+        
         tableView.register(UINib(nibName: "InternetPackagesTableCell", bundle: nil), forCellReuseIdentifier: InternetPackagesTableCell.identifier)
         tableView.register(UINib(nibName: "PromoTableCell", bundle: nil), forCellReuseIdentifier: PromoTableCell.identifier)
         tableView.register(UINib(nibName: "VoucherTableCell", bundle: nil), forCellReuseIdentifier: VoucherTableCell.identifier)
-        
-        tableView.separatorStyle = .none
     }
 
 }
@@ -61,33 +63,28 @@ extension InternetPackagesViewController: UITableViewDataSource, UITableViewDele
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
             cell.setupCollection()
             cell.delegate = self
-            cell.internetPackage = datas
-            
+            cell.internetPackage = dataInternetPackage
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
             cell.setupCollection()
             cell.delegate = self
-            cell.internetPackage = datas
-            
+            cell.internetPackage = dataInternetPackage
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: VoucherTableCell.identifier, for: indexPath) as? VoucherTableCell
             else { return UITableViewCell() }
             cell.setupCollection()
             cell.pictures = dataVouchers
-            
             return cell
         case 4:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
             cell.setupCollection()
             cell.delegate = self
-            cell.internetPackage = datas
-            
+            cell.internetPackage = dataDirumahAja
             return cell
         default:
             return UITableViewCell()
-            
         }
     }
     

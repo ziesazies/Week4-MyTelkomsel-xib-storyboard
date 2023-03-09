@@ -27,9 +27,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9rv-MC-mae" firstAttribute="top" secondItem="KOL-dI-ziv" secondAttribute="top" id="Plr-ZS-k28"/>
-                            <constraint firstAttribute="height" constant="100" id="RcC-ZY-meE"/>
                             <constraint firstAttribute="trailing" secondItem="9rv-MC-mae" secondAttribute="trailing" id="S4h-ug-Xc6"/>
-                            <constraint firstAttribute="width" constant="248" id="qB5-eJ-wBM"/>
                             <constraint firstAttribute="bottom" secondItem="9rv-MC-mae" secondAttribute="bottom" id="rod-7G-Sj8"/>
                             <constraint firstItem="9rv-MC-mae" firstAttribute="leading" secondItem="KOL-dI-ziv" secondAttribute="leading" id="vX9-am-8jM"/>
                         </constraints>

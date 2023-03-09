@@ -35,9 +35,9 @@ class PackageCell: UICollectionViewCell {
             let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: model.priceBefore)
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
             priceBeforeLabel.attributedText = attributeString
+            priceAfterLabel.text = model.priceAfter
             
         }
-//        priceAfterLabel.text = model.priceAfter
         
         quotaLabel.text = model.quota
         
