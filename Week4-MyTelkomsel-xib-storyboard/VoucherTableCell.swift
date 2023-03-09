@@ -51,11 +51,11 @@ extension VoucherTableCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 248, height: 172)
+        return CGSize(width: collectionView.frame.size.width / 1.6, height: collectionView.frame.size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24)
+        return UIEdgeInsets(top: 8, left: 16, bottom: 16, right: 16)
     }
     
     

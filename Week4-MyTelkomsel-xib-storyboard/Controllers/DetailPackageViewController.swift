@@ -13,23 +13,33 @@ class DetailPackageViewController: UIViewController, UIGestureRecognizerDelegate
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var buyButton: UIButton!
     
-    var model: InternetPackage?
+    var dataDetail: InternetPackage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupTableDetail()
+        setupDetailNavigationBar()
+        setupDetailTable()
+        setupBuyButton()
     }
     
-    func setupTableDetail() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    func setupDetailNavigationBar() {
         title = "Detail Paket"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: UIBarButtonItem.Style.plain, target: navigationController, action: #selector(UINavigationController.popViewController(animated:)))
         backButton.tintColor = UIColor.black
         navigationItem.leftBarButtonItem = backButton
         navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .never
+        
+    }
+    
+    func setupDetailTable() {
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -39,7 +49,9 @@ class DetailPackageViewController: UIViewController, UIGestureRecognizerDelegate
         tableView.register(UINib(nibName: "DurationCell", bundle: nil), forCellReuseIdentifier: DurationCell.identifier)
         tableView.register(UINib(nibName: "DetailPackageCell", bundle: nil), forCellReuseIdentifier: DetailPackageCell.identifier)
         tableView.register(UINib(nibName: "DescriptionCell", bundle: nil), forCellReuseIdentifier: DescriptionCell.identifier)
-        
+    }
+    
+    func setupBuyButton() {
         buyButton.backgroundColor = UIColor(rgb: 0xEC2028)
         buyButton.setTitle("BELI SEKARANG", for: .normal)
         buyButton.setTitleColor(UIColor.white, for: .normal)
@@ -48,13 +60,28 @@ class DetailPackageViewController: UIViewController, UIGestureRecognizerDelegate
         
         buyButton.layer.cornerRadius = 4
         buyButton.layer.masksToBounds = true
-        
+        addTopShadow(forView: bottomView)
     }
+    
+    func addTopShadow(forView view: UIView, shadowHeight height: CGFloat = 5) {
+                let shadowPath = UIBezierPath()
+                shadowPath.move(to: CGPoint(x: 0, y: 0))
+                shadowPath.addLine(to: CGPoint(x: view.bounds.width, y:0))
+                shadowPath.addLine(to: CGPoint(x: view.bounds.width-20, y: view.bounds.height ))
+                shadowPath.addLine(to: CGPoint(x: view.bounds.width-20, y: view.bounds.height))
+                shadowPath.close()
+
+                view.layer.shadowColor = UIColor.black.cgColor
+                view.layer.shadowOpacity = 0.3
+                view.layer.masksToBounds = false
+                view.layer.shadowPath = shadowPath.cgPath
+                view.layer.shadowRadius = 4
+            }
     
     @objc func buyButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "BuyPackageViewController") as! BuyPackageViewController
-        viewController.model = self.model
+        viewController.model = self.dataDetail
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -66,7 +93,7 @@ extension DetailPackageViewController: UITableViewDelegate, UITableViewDataSourc
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailPriceCell.identifier) as? DetailPriceCell else { return UITableViewCell() }
             cell.setupDetailPriceUI()
-            if let dataPrice = model {
+            if let dataPrice = dataDetail {
                 cell.setupDetailPriceData(before: dataPrice.priceBefore, after: dataPrice.priceAfter)
                 
             }
@@ -75,17 +102,17 @@ extension DetailPackageViewController: UITableViewDelegate, UITableViewDataSourc
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DurationCell.identifier) as? DurationCell else { return UITableViewCell() }
             cell.setupDurationUI()
-            cell.durationLabel.text = model?.duration
+            cell.durationLabel.text = dataDetail?.duration
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailPackageCell.identifier, for: indexPath) as? DetailPackageCell else { return UITableViewCell() }
             cell.setupDetailUI()
-            cell.setupDetailData(model: model)
+            cell.setupDetailData(model: dataDetail)
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionCell.identifier, for: indexPath) as? DescriptionCell else { return UITableViewCell() }
             cell.setupDescriptionUI()
-            cell.setupDescriptionData(model: model)
+            cell.setupDescriptionData(model: dataDetail)
             return cell
         default:
             return UITableViewCell()

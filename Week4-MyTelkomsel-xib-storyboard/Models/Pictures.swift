@@ -17,7 +17,6 @@ public struct PicturesProvider {
         return [
             Pictures(image: "promo1", label: ""),
             Pictures(image: "promo2", label: ""),
-//            Pictures(image: "promo3", label: "")
         ]
     }
     

@@ -85,7 +85,6 @@
                             <constraint firstItem="LQl-kq-ZIk" firstAttribute="top" secondItem="WEK-kP-dbi" secondAttribute="bottom" id="sib-LG-z3Q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zcX-gP-QRu"/>
                     <connections>
                         <outlet property="bottomView" destination="LQl-kq-ZIk" id="eP9-vY-pZb"/>
                         <outlet property="buyButton" destination="bhg-I7-zWP" id="zxB-Gh-x7M"/>

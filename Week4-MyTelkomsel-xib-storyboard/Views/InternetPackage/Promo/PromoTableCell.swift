@@ -13,7 +13,7 @@ class PromoTableCell: UITableViewCell {
     
     static let identifier = "promoTable"
     
-    var pictures: [Pictures]?
+    var pictureModel: [Pictures]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,13 +28,9 @@ class PromoTableCell: UITableViewCell {
     
 }
 
-extension PromoTableCell: UICollectionViewDelegateFlowLayout {
-    
-}
-
-extension PromoTableCell: UICollectionViewDataSource {
+extension PromoTableCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let model = pictures {
+        if let model = pictureModel {
             return model.count
         }
         return 0
@@ -44,7 +40,7 @@ extension PromoTableCell: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PromoCell.identifier, for: indexPath) as? PromoCell else { return UICollectionViewCell() }
     
         cell.setupPromoUI()
-        if let model = pictures {
+        if let model = pictureModel {
             cell.setupPromoData(model: model[indexPath.row])
         }
         return cell
@@ -52,11 +48,12 @@ extension PromoTableCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 248, height: 100)
+//        return CGSize(width: 248, height: 100)
+        return CGSize(width: collectionView.frame.size.width / 1.6, height: collectionView.frame.height)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24)
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
 }
 

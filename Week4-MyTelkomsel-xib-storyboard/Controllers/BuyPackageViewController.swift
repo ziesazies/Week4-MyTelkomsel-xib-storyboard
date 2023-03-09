@@ -19,7 +19,7 @@ class BuyPackageViewController: UIViewController {
     @IBOutlet weak var backToHomeButton: UIButton!
     
     var model: InternetPackage?
-    var aString: String? = ""
+    var listOfPackage: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,20 +40,20 @@ class BuyPackageViewController: UIViewController {
     }
     
     func setupSuccessData() {
+        successImage.image = UIImage(named: "success")
+        
         packageNameLabel.text = model?.packageName
         if let dataDetail = model?.packageDetails {
             for (index, item) in dataDetail.enumerated() where index != dataDetail.count - 1 {
-                aString?.append("\(item.quantity) \(item.type) + ")
+                listOfPackage?.append("\(item.quantity) \(item.type) + ")
             }
-            aString?.append("\(dataDetail.last?.quantity ?? "") \(dataDetail.last?.type ?? "")")
+            listOfPackage?.append("\(dataDetail.last?.quantity ?? "") \(dataDetail.last?.type ?? "")")
         }
         
-        detailPackageLabel.text = aString
-        detailPackageLabel.contentMode = .scaleAspectFill
+        detailPackageLabel.text = listOfPackage
     }
         
     func setupSuccessUI() {
-        successImage.image = UIImage(named: "success")
         titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         titleLabel.textAlignment = .center
         titleLabel.text = "Pembayaran Berhasil"
@@ -73,12 +73,10 @@ class BuyPackageViewController: UIViewController {
         
         packageNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         packageNameLabel.textAlignment = .center
-//        packageNameLabel.text = "Combo OMG! 6.5 GB"
         
         detailPackageLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         detailPackageLabel.textAlignment = .center
         detailPackageLabel.textColor = UIColor.lightGray
-//        detailPackageLabel.text = "4.5 GB Internet + 2 GB OMG! + 60 SMS Tsel + 100 Mins Voice Tsel"
         detailPackageLabel.numberOfLines = 0
         
         backToHomeButton.addTarget(self, action: #selector(backToHomeButtonTapped(_:)), for: .touchUpInside)

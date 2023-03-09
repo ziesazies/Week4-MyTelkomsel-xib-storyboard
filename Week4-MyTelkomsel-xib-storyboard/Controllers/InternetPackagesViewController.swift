@@ -27,18 +27,20 @@ class InternetPackagesViewController: UIViewController, InternetPackagesViewCont
         // Do any additional setup after loading the view.
         title = "Paket Internet"
         delegate = self
-        setupTable()
+        setupInternetPackageTable()
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
     
     func navigateToDetail(model: InternetPackage) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailPackageViewController") as! DetailPackageViewController
         
-        viewController.model = model
+        viewController.dataDetail = model
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func setupTable() {
+    func setupInternetPackageTable() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -57,7 +59,7 @@ extension InternetPackagesViewController: UITableViewDataSource, UITableViewDele
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PromoTableCell.identifier, for: indexPath) as? PromoTableCell else { return UITableViewCell() }
             cell.setupCollection()
-            cell.pictures = dataPromos
+            cell.pictureModel = dataPromos
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InternetPackagesTableCell.identifier, for: indexPath) as? InternetPackagesTableCell else { return UITableViewCell() }
@@ -111,7 +113,7 @@ extension InternetPackagesViewController: UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionView = UIView()
-        let label = UILabel(frame: CGRect(x: 24, y: 0, width: tableView.bounds.width - (20*2), height: 20))
+        let label = UILabel(frame: CGRect(x: 16, y: 0, width: tableView.bounds.width - (20*2), height: 20))
         
         switch section {
         case 0:
